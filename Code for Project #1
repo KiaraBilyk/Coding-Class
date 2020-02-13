@@ -7,15 +7,11 @@ while True:
     print("Guess the Whole Number from 1 to 5!")
     
     #Get guess from player
-    choice = input("Pick Number: ")
-    if choice.isdigit() :
-        while choice > 5 or choice < 1: 
-         choice = input("Enter a number between 1 and 5: ")
-        print("user choice is: " + choice)
-    else:
-      choice = input("Enter a number between 1 and 5: ")
+    choice = int(input("Pick Number: "))
+    while choice > 5 or choice < 0: 
+         choice = int(input("Enter a number between 1 and 5: "))
+    print("user choice is: " + str(choice))
     
-    choice = input("Enter a number between 1 and 5: ")
     
     #start random number
     print("Generating random number...")
@@ -40,4 +36,4 @@ while True:
         break
       
       
-print("\nSee you next time! Wins: " + str(wins)) 
+print("\nSee you next time!" + "\nPlays: " + str(plays) + "\nWins: " + str(wins)) 
