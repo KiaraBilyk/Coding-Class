@@ -4,35 +4,40 @@ wins=0
 plays=1
 #start
 while True:
-    print("Guess the Number from 1 to 5!")
+    print("Guess the Whole Number from 1 to 5!")
     
     #Get guess from player
-    choice = int(input("Pick Number: ")) 
-    if choice.is_integer():
-        choice = int(input("Please enter a number: "))
-    elif choice.is_number():
+    choice = input("Pick Number: ")
+    if choice.isdigit() :
         while choice > 5 or choice < 1: 
-            choice = int(input("enter valid input: ")) 
-        print("user choice is: " + str(choice))
+         choice = input("Enter a number between 1 and 5: ")
+        print("user choice is: " + choice)
+    else:
+      choice = input("Enter a number between 1 and 5: ")
     
-     #start random number
-        print("Generating random number...")
-        comp_num = random.randint(1, 5) 
-        print("Number is: " + str(comp_num))
+    choice = input("Enter a number between 1 and 5: ")
+    
+    #start random number
+    print("Generating random number...")
+    comp_num = random.randint(1, 3) 
+    print("Number is: " + str(comp_num))
     
     #check if won
-        if choice == comp_num:
-            print("You Win! " + str(choice) + str(' = ') + str(comp_num))
-            wins= +1
-        else:
-            print("You Lose. " + str(choice) + str(' does not = ') + str(comp_num))
-        print("Play again? (Y/N)")
-        ans = input()
+    if choice == comp_num:
+        print("You Win! " + str(choice) + str(' = ') + str(comp_num))
+        wins= +1
+    else:
+        print("You Lose. " + str(choice) + str(' does not = ') + str(comp_num))
+    print("Play again? (Y/N)")
+    ans = input()
     # if user input n or N then condition is True 
-        if ans == 'y' or ans == 'Y':
-            plays=+1
-        elif ans == 'n' or ans =='N':
-            break
-        
+    while ans != "n" and ans != "N" and ans != "Y" and ans != "y":
+      print("Please type Y or N")
+      ans = input()
+    if ans == 'y' or ans == 'Y':
+     plays=+1
+    elif ans == 'n' or ans =='N':
+        break
       
-    print("\nSee you next time! You won " + str(wins) + str(" times."))
+      
+print("\nSee you next time! Wins: " + str(wins)) 
