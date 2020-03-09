@@ -1,1 +1,41 @@
- 
+ v="1 2 3"
+b="4 5 6"
+n="7 8 9"
+vc="1 4 7"
+bc="2 5 8"
+nc="3 6 9"
+d="1 5 9"
+dd="3 5 7"
+pointO=0
+pointX=0
+
+def checkrows():
+    if v=="O O O":
+        endgame(O)
+    elif v=="X X X":
+        endgame(X)
+    elif b=="O O O":
+        endgame(O)
+    elif b=="X X X":
+        endgame(X)
+    elif n=="O O O":
+        endgames(O)
+    elif n=="X X X":
+        endgame(X)
+    else:
+        checkcolumns()
+
+def checkcolumns():
+    if vc=="O O O":
+        endgame(O)
+    elif vc=="X X X":
+        endgame(X)
+    elif bc=="O O O":
+        endgame(O)
+    elif bc=="X X X":
+        endgame(X)
+    elif nc=="O O O":
+        endgame(O)
+    elif nc=="X X X":
+        endgame(X)
+        
