@@ -1,4 +1,4 @@
- v="1 2 3"
+v="1 2 3"
 b="4 5 6"
 n="7 8 9"
 vc="1 4 7"
@@ -6,8 +6,7 @@ bc="2 5 8"
 nc="3 6 9"
 d="1 5 9"
 dd="3 5 7"
-pointO=0
-pointX=0
+turn=1
 
 def checkrows():
     if v=="O O O":
@@ -38,4 +37,36 @@ def checkcolumns():
         endgame(O)
     elif nc=="X X X":
         endgame(X)
-        
+    else:
+        checkcross()
+
+def checkcross():
+    if d=="O O O":
+        endgame(O)
+    elif d=="X X X":
+        endgame(X)
+    elif dd=="O O O":
+        endgame(O)
+    elif dd=="X X X":
+        endgame(X)
+    else:
+        turnnext()
+
+def turnnext():
+    if turn==1:
+        turn=2
+        compturn()
+    else:
+        turn=1
+        playerturn()
+
+def endgame(v):
+    if v=="O":
+        print("You Won! Good Job!")
+        print("Press Run to play again.")
+    else:
+        print("Better Luck Next Time.")
+        print("Press Run to play again.")
+
+def playerturn():
+    
